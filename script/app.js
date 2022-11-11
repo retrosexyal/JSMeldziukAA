@@ -14,7 +14,7 @@ alert(`Сумма чисел: ${sum}`);
 
 const name = prompt('Введите имя пользователя');
 const age = prompt('Введите сколько Вам лет');
-age >= 18 ? alert(`Добро пожаловать ${name}`): alert(`Простите, ${name}, доступ закрыт`);
+age > 17 ? alert(`Добро пожаловать ${name}`): alert(`Простите, ${name}, доступ закрыт`);
 
 // task 4
 
@@ -22,7 +22,7 @@ let blockName, elName, mod;
 if (confirm('Хотите ввести название блока?')) {
     blockName = prompt('Введите название блока')
     if (confirm('Хотите ввести название элемента?')){
-        elName = prompt('Введите название элемента')
+        while (!elName) elName = prompt('Введите название элемента');
         if (confirm('Хотите ввести название модификатора?')){
             mod = prompt('Введите название модификатора');
             console.log(`Название блока: ${blockName}__${elName}_${mod}`);
@@ -36,19 +36,19 @@ if (confirm('Хотите ввести название блока?')) {
 // task 5
 
 let result;
-const num1 = prompt('Введите первое число');
-const num2 = prompt('Введите второе число');
+const num1 = +prompt('Введите первое число');
+const num2 = +prompt('Введите второе число');
 const oper = prompt('Выберите нужную арифметическую операцию (div, plus, mult, minus)');
 if (oper === 'div') {
-    result = +num1 / +num2;
+    result = num1 / num2;
     alert(result);
 } else if (oper === 'plus') {
-    result = +num1 + +num2;
+    result = num1 + num2;
     alert(result);
 } else if (oper === 'mult') {
-    result = +num1 * +num2;
+    result = num1 * num2;
     alert(result);
 } else if (oper === 'minus') {
-    result = +num1 - +num2;
+    result = num1 - num2;
     alert(result);
 } else alert('Что-то пошло не так');
